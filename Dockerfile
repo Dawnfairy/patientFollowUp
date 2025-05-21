@@ -12,7 +12,7 @@ COPY src src
 RUN ./mvnw clean package -DskipTests -B
 
 # --------- Runtime aşaması ----------
-FROM eclipse-temurin:22-jdk-jammy
+FROM eclipse-temurin:17-jdk-jammy
 WORKDIR /app
 
 # Sadece jar dosyamızı alıyoruz
