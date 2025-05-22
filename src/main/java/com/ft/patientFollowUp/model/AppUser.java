@@ -32,10 +32,17 @@ public class AppUser implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    private boolean accountNonExpired    = true;
-    private boolean accountNonLocked     = true;
-    private boolean credentialsNonExpired= true;
-    private boolean enabled              = true;
+    @Builder.Default
+    private boolean accountNonExpired = true;
+
+    @Builder.Default
+    private boolean accountNonLocked = true;
+
+    @Builder.Default
+    private boolean credentialsNonExpired = true;
+
+    @Builder.Default
+    private boolean enabled = true;
 
     @Override
     public Collection<Role> getAuthorities() {
