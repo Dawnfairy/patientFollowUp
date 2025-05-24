@@ -19,17 +19,16 @@ public class Appointment {
     private Long id;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "patient_id")
-    private Patient patient;
-
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "doctor_id")
+    @JoinColumn(name = "doctor_id", nullable = false)
     private Doctor doctor;
 
     @Column(nullable = false)
     private LocalDateTime appointmentTime;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
     private AppointmentStatus status;
+
+    @ManyToOne
+    @JoinColumn(name = "patient_id", nullable = true)
+    private Patient patient;
 }

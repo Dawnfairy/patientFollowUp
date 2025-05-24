@@ -18,7 +18,7 @@ public class Doctor {
     private Long id;
 
     @OneToOne(optional = false)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false, unique = true)
     private AppUser user;
 
     @Column(nullable = false)
@@ -28,4 +28,7 @@ public class Doctor {
     private String lastName;
 
     private String specialization;
+
+    private String email;
+    private String phone;
 }

@@ -1,14 +1,15 @@
 package com.ft.patientFollowUp.dto;
 
-import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class RegisterRequest {
     @NotBlank
     private String username;
@@ -22,9 +23,6 @@ public class RegisterRequest {
     @NotBlank
     private String role;
 
-    @Valid
     private PatientDto patientInfo;
-
-    @Valid
     private DoctorDto doctorInfo;
 }

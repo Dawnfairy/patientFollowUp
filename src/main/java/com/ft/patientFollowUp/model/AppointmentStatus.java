@@ -1,11 +1,8 @@
 package com.ft.patientFollowUp.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 
-@AllArgsConstructor
-@Getter
 public enum AppointmentStatus {
+    AVAILABLE,
     PENDING,
     APPROVED,
     REJECTED
